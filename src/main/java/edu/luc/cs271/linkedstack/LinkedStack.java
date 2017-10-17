@@ -13,32 +13,41 @@ public class LinkedStack<E> implements IStack<E> {
 
   @Override
   public E push(final E obj) {
-    // TODO
-    return null;
-  }
+  theData.add(obj);
+  return obj;
+}
 
   @Override
   public E peek() {
-    // TODO
-    return null;
+   if (isEmpty()) throw new EmptyStackException();
+        return first.item;
   }
-
+  
   @Override
   public E pop() {
-    // TODO
+    if (isEmpty()) throw new NoSuchElementException("Stack underflow");
+    return theData[topOfStack--];
     return null;
   }
 
   @Override
   public boolean isEmpty() {
-    // TODO
+   return first == null;
     return false;
   }
 
+
   @Override
-  public List<E> asList() {
-    // TODO implement using an ArrayList preallocated with the right size
+  public class ArrayStack<E> implements IStack<E> {
+  public Array<E> asList() {
+  int topOfStack = -1;
+  final int INITIAL_CAPACITY = 10;
+  theData = (E[])new Object[INITIAL_CAPACITY];
+
     // TODO add any instance variable(s) required to support this
     return null;
+  
+   }
   }
 }
+
