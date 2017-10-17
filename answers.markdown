@@ -11,6 +11,6 @@ we can implement the LinkedStack as an LinkedList. Using removefirst, getfirst, 
 
 4-Is it better for push and pop to return the item or the stack itself? Briefly discuss the pros and cons of each design.<br>
 It would be much more efficient to use the push and pop methods. This gives us the exact items which were added and removed and operates in o(1) complexity <br>
-Returning an entire stack may be acceptable for smaller sizes(comp sci class), but in industry, where they woudl be much-much larger  it would be extremley 
-ineffiecient. 
+Returning an entire stack may be acceptable for smaller sizes(comp sci class), but in industry, where they woudl be much-much larger  it would be extremley  <br>
+ineffiecient.
 
