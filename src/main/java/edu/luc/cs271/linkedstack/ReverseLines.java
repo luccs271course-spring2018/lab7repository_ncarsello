@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class ReverseLines {
 
- public static void main(String[] args) {
- 
-   final Scanner input = new Scanner(System.in);
-   String line;
+  public static void main(String[] args) {
 
-   LinkedStack<String> stackReverse = new LinkedStack<String>();
-   while ((line = input.nextLine()) != null) {
-     stackReverse.push(line);
-   }
+    final Scanner input = new Scanner(System.in);
+    String line;
 
-   input.close();
+    LinkedStack<String> stackReverse = new LinkedStack<String>();
+    while ((line = input.nextLine()) != null) {
+      stackReverse.push(line);
+    }
 
-   while (!stackReverse.isEmpty()) {
-     System.out.println(stackReverse.pop());
-   }
- }
+    input.close();
+
+    while (!stackReverse.isEmpty()) {
+      System.out.println(stackReverse.pop());
+    }
+  }
 }
