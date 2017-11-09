@@ -3,13 +3,12 @@ package edu.luc.cs271.linkedstack;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Scanner;
 
 public class LinkedStack<E> implements IStack<E> {
 
-private int size = 0;
-
   private Node<E> top;
+
+  private int size = 0;
 
   @Override
   public E push(final E obj) {
@@ -48,32 +47,33 @@ private int size = 0;
 
   @Override
   public List<E> asList() {
-    final ArrayList<E> result = new ArrayList<>(size);
+    final ArrayList<E> result = new ArrayList<E>(size);
     populateList(top, result); // DONE TODO replace null with the right reference
     return result;
-}
-  
+  }
+
   private void populateList(final Node<E> curr, final List<E> result) {
-  // TODO recursively populate the list in the desired order
-  if (curr.next != null){
+    // TODO recursively populate the list in the desired order
+    if (curr == null) {
+      return;
+    }
     result.add(curr.data);
-    populateList.add(curr.next, result);
+    populateList(curr.next, result);
   }
 
+  @Override
+  public List<E> asFifoList() {
+    final ArrayList<E> result = new ArrayList<>(size);
+    populateFifoList(top, result); // DONE TODO replace null with the right reference
+    return result;
   }
 
-@Override
-public List<E> asFifoList() {
-  final ArrayList<E> result = new ArrayList<>(size);
-  populateFifoList(top, result); // DONE TODO replace null with the right reference
-  return result;
-}
-
-private void populateFifoList(final Node<E> curr, final List<E> result) {
-  // TODO recursively populate the list in the desired order
-  if (curr!=null){
-    result.add(curr.data);
-    populateList.add(curr.next, result);
+  private void populateFifoList(final Node<E> curr, final List<E> result) {
+    // TODO recursively populate the list in the desired order
+    if (curr == null) {
+      return;
+    }
+    result.add(0, curr.data);
+    populateFifoList(curr.next, result);
   }
-}
 }

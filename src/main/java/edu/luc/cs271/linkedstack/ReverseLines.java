@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class ReverseLines {
 
   public static void main(final String[] args) {
-  final Scanner input = new Scanner(System.in);
-  printReverse(input);
-}
+    final Scanner input = new Scanner(System.in);
+    printReverse(input);
+  }
 
-private static void printReverse(final Scanner input) {
-  // TODO recursively read and print successive input lines until EOF, then print them out in reverse order
+  private static void printReverse(final Scanner input) {
+    // TODO recursively read and print successive input lines until EOF, then print them out in
+    // reverse order
 
-    while (printReverse.next != null) {
-      System.out.println(printReverse.next);
-      
-      printReverse(top.next);
-      System.out.print(top.data+" ");
+    if (input.hasNext()) {
+      System.out.println(input.nextLine());
+
+      printReverse(input);
+      System.out.print(input + " ");
     }
   }
 }
-
